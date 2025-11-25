@@ -1,23 +1,28 @@
-let nomeDoHeroi = "Mario";
-let xpDoHeroi = 1400;
-let nivelDoHeroi;
-
-if (xpDoHeroi < 1000) {
-    nivelDoHeroi = "Ferro";
-} else if (xpDoHeroi >= 1001 && xpDoHeroi <= 2000) {
-    nivelDoHeroi = "Bronze";
-} else if (xpDoHeroi >= 2001 && xpDoHeroi <= 5000) {
-    nivelDoHeroi = "Prata";
-} else if (xpDoHeroi >= 5001 && xpDoHeroi <= 7000) {
-    nivelDoHeroi = "Ouro";
-} else if (xpDoHeroi >= 7001 && xpDoHeroi <= 8000) {
-    nivelDoHeroi = "Platina";
-} else if (xpDoHeroi >= 8001 && xpDoHeroi <= 9000) {
-    nivelDoHeroi = "Ascendente";
-} else if (xpDoHeroi >= 9001 && xpDoHeroi <= 10000) {
-    nivelDoHeroi = "Imortal";
-} else { // Para XP >= 10001
-    nivelDoHeroi = "Radiante";
+function obterNivel(xp) {
+    if (xp <= 1000) return "Ferro";
+    if (xp <= 2000) return "Bronze";
+    if (xp <= 5000) return "Prata";
+    if (xp <= 7000) return "Ouro";
+    if (xp <= 8000) return "Platina";
+    if (xp <= 9000) return "Ascendente";
+    if (xp <= 10000) return "Imortal";
+    return "Radiante";
 }
 
-console.log("O Herói de nome " + nomeDoHeroi + " está no nível de " + nivelDoHeroi)
+const nomeDoHeroi = "Mario";
+const xpDoHeroi = Math.floor(Math.random() * 101) * 100;
+;
+const nivelDoHeroi = obterNivel(xpDoHeroi);
+
+const mensagem = `O Herói de nome <strong>${nomeDoHeroi}</strong> está no nível de <strong>${nivelDoHeroi}</strong>`;
+
+const outputContainer = document.getElementById('output');
+        
+const resultadoElemento = document.createElement('p');
+resultadoElemento.id = 'resultado';
+resultadoElemento.innerHTML = mensagem; // innerHTML para renderizar as tags <strong>
+        
+outputContainer.innerHTML = '';
+outputContainer.appendChild(resultadoElemento);
+
+console.log(`O Herói de nome ${nomeDoHeroi} está no nível de ${nivelDoHeroi}`);
