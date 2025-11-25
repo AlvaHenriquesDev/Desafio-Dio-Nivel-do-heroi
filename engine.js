@@ -11,7 +11,6 @@ function obterNivel(xp) {
 
 const nomeDoHeroi = "Mario";
 const xpDoHeroi = Math.floor(Math.random() * 101) * 100;
-;
 const nivelDoHeroi = obterNivel(xpDoHeroi);
 
 const mensagem = `O Herói de nome <strong>${nomeDoHeroi}</strong> está no nível de <strong>${nivelDoHeroi}</strong>`;
@@ -20,7 +19,7 @@ const outputContainer = document.getElementById('output');
         
 const resultadoElemento = document.createElement('p');
 resultadoElemento.id = 'resultado';
-resultadoElemento.innerHTML = mensagem; // innerHTML para renderizar as tags <strong>
+resultadoElemento.innerHTML = mensagem;
         
 outputContainer.innerHTML = '';
 outputContainer.appendChild(resultadoElemento);
